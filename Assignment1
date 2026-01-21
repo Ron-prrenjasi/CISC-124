@@ -1,0 +1,63 @@
+import java.util.Scanner;
+
+public class Assignment1 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        while (true) {
+            System.out.println("Enter the first number");
+            System.out.print("or '0' to quit : ");
+            int x = sc.nextInt(); 
+            
+            if (x == 0){
+                break;
+            }
+                System.out.print("Enter operation:");
+                char oper = sc.next().charAt(0);
+
+            if (oper != '+' && oper != '-' && oper != '*' && oper != '/' && oper != 'e' && oper != 's') {
+                System.out.println("error: unknown operation");
+                continue;
+            }
+
+            if (oper == 's') {
+                if (x < 0) {
+                    System.out.println("error: negative square root");
+                } else {
+                    System.out.println((float) Math.sqrt(x));
+                }
+                continue;
+            }
+            
+            
+
+            System.out.println("Enter the second number:");
+            int y = sc.nextInt();
+
+
+            if (oper == '+'){
+                System.out.println(x + y);
+            }else if (oper == '-'){
+                System.out.println(x - y);
+            
+            }else if (oper == '*'){
+                System.out.println(x * y);
+            
+            }else if (oper == '/'){
+                System.out.println(x / y);
+            
+            }else if (oper == 'e'){
+                if (y < 0){
+                    System.out.print("error: illegal exponent");
+                    continue;
+                }
+                System.out.println((int) Math.round(Math.pow(x, y)));
+            }
+
+
+
+            
+                
+
+        }
+    }
+}
